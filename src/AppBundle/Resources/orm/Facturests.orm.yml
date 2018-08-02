@@ -1,0 +1,68 @@
+Facturests:
+    type: entity
+    table: facturests
+    indexes:
+        soustraitant_id:
+            columns:
+                - soustraitant_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        titre:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+        dateEnvoi:
+            type: date
+            nullable: false
+            column: date_envoi
+        etat:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+        numero:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        ttc:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        tva:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+        adrChantier:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+            column: adr_chantier
+    manyToOne:
+        soustraitant:
+            targetEntity: Soustraitants
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                soustraitant_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

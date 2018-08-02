@@ -1,0 +1,2 @@
+/     Error message : ype error: Argument 1 passed to Doctrine\ORM\EntityRepository::findBy()
+//     must be of the type array, string given, called in J:\wamp64\www\Renovie\src\AppBundle\Controller\ClientsController.php on line 74

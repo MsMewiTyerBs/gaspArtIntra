@@ -1,0 +1,103 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Soustraitants
+ *
+ * @ORM\Table(name="soustraitants")
+ * @ORM\Entity
+ */
+class Soustraitants
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="civilite", type="string", length=1, nullable=false)
+     */
+    private $civilite = '2';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=60, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=60, nullable=true)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="societe", type="string", length=60, nullable=true)
+     */
+    private $societe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tel", type="string", length=15, nullable=true)
+     */
+    private $tel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fax", type="string", length=15, nullable=true)
+     */
+    private $fax;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mob", type="string", length=15, nullable=true)
+     */
+    private $mob;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rue", type="string", length=120, nullable=true)
+     */
+    private $rue;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cp", type="string", length=10, nullable=true)
+     */
+    private $cp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="string", length=40, nullable=true)
+     */
+    private $ville;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100, nullable=true)
+     */
+    private $email;
+
+
+}
+

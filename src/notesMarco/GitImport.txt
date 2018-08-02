@@ -1,0 +1,253 @@
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:database:import renovie_production.sql
+Processing file 'J:\Renovie\renovie_production.sql'... OK!
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php app/console doctrine:mapping:convert --from-renovie_production.sql yml
+Could not open input file: app/console
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php app/console doctrine:mapping:convert --from-renovie_production.sql yml ./s                                                                                rc
+Could not open input file: app/console
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php app/console doctrine:mapping:convert --from-renovie_production.sql
+Could not open input file: app/console
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:convert --from-renovie_production.sql yml
+
+
+  The "--from-renovie_production.sql" option does not exist.
+
+
+doctrine:mapping:convert [--filter FILTER] [-f|--force] [--from-database] [--ext
+end [EXTEND]] [--num-spaces [NUM-SPACES]] [--namespace [NAMESPACE]] [--em [EM]]
+[-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ans
+i] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command> <to-type> <d
+est-path>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:convert --from-database yml
+
+
+  Not enough arguments (missing: "dest-path").
+
+
+doctrine:mapping:convert [--filter FILTER] [-f|--force] [--from-database] [--ext
+end [EXTEND]] [--num-spaces [NUM-SPACES]] [--namespace [NAMESPACE]] [--em [EM]]
+[-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ans
+i] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command> <to-type> <d
+est-path>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:convert --from-database yml ./src
+Processing entity "Clients"
+Processing entity "Devis"
+Processing entity "Employes"
+Processing entity "Facturefs"
+Processing entity "Factures"
+Processing entity "Facturests"
+Processing entity "Fournisseurs"
+Processing entity "Lettrees"
+Processing entity "Lettrefs"
+Processing entity "Lettrers"
+Processing entity "Lettres"
+Processing entity "Lettrests"
+Processing entity "Photos"
+Processing entity "Relations"
+Processing entity "Soustraitants"
+
+Exporting "yml" mapping information to "J:\Renovie\src"
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping: "src" "AppBundle" annotation
+
+
+  Command "doctrine:mapping:" is ambiguous.
+  Did you mean one of these?
+      doctrine:mapping:import
+      doctrine:mapping:convert
+      doctrine:mapping:info
+
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:import "src" "AppBundle" annotation
+
+
+  Too many arguments, expected arguments "command" "name" "mapping-type".
+
+
+doctrine:mapping:import [--em [EM]] [--shard SHARD] [--filter FILTER] [--force]
+[--path PATH] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--a
+nsi] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command
+> <name> [<mapping-type>]
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:import "AppBundle" annotation
+Importing mapping information from "default" entity manager
+  > writing J:\Renovie\src\AppBundle/Entity/Clients.php
+  > writing J:\Renovie\src\AppBundle/Entity/Devis.php
+  > writing J:\Renovie\src\AppBundle/Entity/Employes.php
+  > writing J:\Renovie\src\AppBundle/Entity/Facturefs.php
+  > writing J:\Renovie\src\AppBundle/Entity/Factures.php
+  > writing J:\Renovie\src\AppBundle/Entity/Facturests.php
+  > writing J:\Renovie\src\AppBundle/Entity/Fournisseurs.php
+  > writing J:\Renovie\src\AppBundle/Entity/Lettrees.php
+  > writing J:\Renovie\src\AppBundle/Entity/Lettrefs.php
+  > writing J:\Renovie\src\AppBundle/Entity/Lettrers.php
+  > writing J:\Renovie\src\AppBundle/Entity/Lettres.php
+  > writing J:\Renovie\src\AppBundle/Entity/Lettrests.php
+  > writing J:\Renovie\src\AppBundle/Entity/Photos.php
+  > writing J:\Renovie\src\AppBundle/Entity/Relations.php
+  > writing J:\Renovie\src\AppBundle/Entity/Soustraitants.php
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:generate:entities "AppBundle"
+ NOTE: The doctrine:generate:entities command has been deprecated.
+       To read more about the differences between anemic and rich models go here
+ http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/gett
+ing-started.html#adding-behavior-to-entities.
+       If you wish to generate your entities, use make:entity --regenerate from
+MakerBundle instead.
+Generating entities for bundle "AppBundle"
+  > backing up Clients.php to Clients.php~
+  > generating AppBundle\Entity\Clients
+  > backing up Devis.php to Devis.php~
+  > generating AppBundle\Entity\Devis
+  > backing up Employes.php to Employes.php~
+  > generating AppBundle\Entity\Employes
+  > backing up Facturefs.php to Facturefs.php~
+  > generating AppBundle\Entity\Facturefs
+  > backing up Factures.php to Factures.php~
+  > generating AppBundle\Entity\Factures
+  > backing up Facturests.php to Facturests.php~
+  > generating AppBundle\Entity\Facturests
+  > backing up Fournisseurs.php to Fournisseurs.php~
+  > generating AppBundle\Entity\Fournisseurs
+  > backing up Lettrees.php to Lettrees.php~
+  > generating AppBundle\Entity\Lettrees
+  > backing up Lettrefs.php to Lettrefs.php~
+  > generating AppBundle\Entity\Lettrefs
+  > backing up Lettrers.php to Lettrers.php~
+  > generating AppBundle\Entity\Lettrers
+  > backing up Lettres.php to Lettres.php~
+  > generating AppBundle\Entity\Lettres
+  > backing up Lettrests.php to Lettrests.php~
+  > generating AppBundle\Entity\Lettrests
+  > backing up Photos.php to Photos.php~
+  > generating AppBundle\Entity\Photos
+  > backing up Relations.php to Relations.php~
+  > generating AppBundle\Entity\Relations
+  > backing up Soustraitants.php to Soustraitants.php~
+  > generating AppBundle\Entity\Soustraitants
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:make:entity --regenerate from
+
+
+  There are no commands defined in the "doctrine:make" namespace.
+
+  Did you mean one of these?
+      doctrine
+      doctrine:cache
+      doctrine:database
+      doctrine:generate
+      doctrine:mapping
+      doctrine:query
+      doctrine:schema
+
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php /make:entity --regenerate from "AppBundle"
+Could not open input file: /make:entity
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:make:entity --regenerate from "AppBundle"
+
+
+  There are no commands defined in the "doctrine:make" namespace.
+
+  Did you mean one of these?
+      doctrine
+      doctrine:cache
+      doctrine:database
+      doctrine:generate
+      doctrine:mapping
+      doctrine:query
+      doctrine:schema
+
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:schema:validate
+[Mapping]  OK - The mapping files are correct.
+[Database] FAIL - The database schema is not in sync with the current mapping file.
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:schema:validate
+[Mapping]  OK - The mapping files are correct.
+[Database] FAIL - The database schema is not in sync with the current mapping file.
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ doctrine:schema:update --dumpl-sql
+bash: doctrine:schema:update: command not found
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:schema:update --dump-sql
+ALTER TABLE clients CHANGE civilite civilite VARCHAR(1) NOT NULL;
+ALTER TABLE devis CHANGE client_id client_id INT DEFAULT NULL, CHANGE etat etat VARCHAR(2) NOT NUL
+L, CHANGE tva tva VARCHAR(1) NOT NULL;
+ALTER TABLE employes CHANGE civilite civilite VARCHAR(1) NOT NULL, CHANGE tel tel VARCHAR(10) DEFA
+ULT NULL, CHANGE secu secu VARCHAR(15) DEFAULT NULL, CHANGE situation situation VARCHAR(1) NOT NUL
+L, CHANGE categorie categorie VARCHAR(1) NOT NULL, CHANGE contrat contrat VARCHAR(1) NOT NULL, CHA
+NGE telboulot telboulot VARCHAR(10) DEFAULT NULL;
+ALTER TABLE facturefs CHANGE fournisseur_id fournisseur_id INT DEFAULT NULL, CHANGE tva tva VARCHA
+R(1) NOT NULL;
+ALTER TABLE factures CHANGE client_id client_id INT DEFAULT NULL, CHANGE tva tva VARCHAR(1) NOT NU
+LL, CHANGE relance relance TINYINT(1) NOT NULL, CHANGE devi_id devi_id INT NOT NULL;
+ALTER TABLE facturests CHANGE soustraitant_id soustraitant_id INT DEFAULT NULL, CHANGE etat etat V
+ARCHAR(1) NOT NULL, CHANGE tva tva VARCHAR(1) NOT NULL;
+ALTER TABLE fournisseurs CHANGE civilite civilite VARCHAR(1) NOT NULL;
+ALTER TABLE lettrees CHANGE employe_id employe_id INT DEFAULT NULL;
+ALTER TABLE lettrefs CHANGE fournisseur_id fournisseur_id INT DEFAULT NULL;
+ALTER TABLE lettrers CHANGE relation_id relation_id INT DEFAULT NULL;
+ALTER TABLE lettres CHANGE client_id client_id INT DEFAULT NULL;
+ALTER TABLE lettrests CHANGE soustraitant_id soustraitant_id INT DEFAULT NULL;
+ALTER TABLE photos CHANGE client_id client_id INT DEFAULT NULL;
+ALTER TABLE relations CHANGE civilite civilite VARCHAR(1) NOT NULL;
+ALTER TABLE soustraitants CHANGE civilite civilite VARCHAR(1) NOT NULL;
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:schema:update --force --dump-sql
+ALTER TABLE clients CHANGE civilite civilite VARCHAR(1) NOT NULL;
+ALTER TABLE devis CHANGE client_id client_id INT DEFAULT NULL, CHANGE etat etat VARCHAR(2) NOT NULL, CHANGE tva tva VARCHAR(1) NOT NULL;
+ALTER TABLE employes CHANGE civilite civilite VARCHAR(1) NOT NULL, CHANGE tel tel VARCHAR(10) DEFAULT NULL, CHANGE secu secu VARCHAR(15) DEFAULT NULL, CHANGE si
+tuation situation VARCHAR(1) NOT NULL, CHANGE categorie categorie VARCHAR(1) NOT NULL, CHANGE contrat contrat VARCHAR(1) NOT NULL, CHANGE telboulot telboulot VA
+RCHAR(10) DEFAULT NULL;
+ALTER TABLE facturefs CHANGE fournisseur_id fournisseur_id INT DEFAULT NULL, CHANGE tva tva VARCHAR(1) NOT NULL;
+ALTER TABLE factures CHANGE client_id client_id INT DEFAULT NULL, CHANGE tva tva VARCHAR(1) NOT NULL, CHANGE relance relance TINYINT(1) NOT NULL, CHANGE devi_id
+ devi_id INT NOT NULL;
+ALTER TABLE facturests CHANGE soustraitant_id soustraitant_id INT DEFAULT NULL, CHANGE etat etat VARCHAR(1) NOT NULL, CHANGE tva tva VARCHAR(1) NOT NULL;
+ALTER TABLE fournisseurs CHANGE civilite civilite VARCHAR(1) NOT NULL;
+ALTER TABLE lettrees CHANGE employe_id employe_id INT DEFAULT NULL;
+ALTER TABLE lettrefs CHANGE fournisseur_id fournisseur_id INT DEFAULT NULL;
+ALTER TABLE lettrers CHANGE relation_id relation_id INT DEFAULT NULL;
+ALTER TABLE lettres CHANGE client_id client_id INT DEFAULT NULL;
+ALTER TABLE lettrests CHANGE soustraitant_id soustraitant_id INT DEFAULT NULL;
+ALTER TABLE photos CHANGE client_id client_id INT DEFAULT NULL;
+ALTER TABLE relations CHANGE civilite civilite VARCHAR(1) NOT NULL;
+ALTER TABLE soustraitants CHANGE civilite civilite VARCHAR(1) NOT NULL;
+
+Updating database schema...
+Database schema updated successfully! "15" queries were executed
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$

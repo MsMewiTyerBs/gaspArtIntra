@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container"></div>
+
+    <h1>Intranet Renovie</h1>
+
+    <!-- insérer code ASCII -->
+    <h2>SELECTION DE LA PREMIERE LETTRE DU NOM DU CONTACT</h2>
+
+    <h2>LISTE COMPLETE DES CLIENTS(332 CLIENTS TROUVES)</h2>
+
+    <!-- Boucler sur les clients -->
+
+    <ul>
+        {% for clients in client %}
+            <li>{{clients.nom|capitalize}}{{clients.prenom}}{{clients.tel}}{{clients.ville}}</li>
+        {% endfor %}
+    </ul>
+
+    </div>
+
+{% endblock %}

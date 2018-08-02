@@ -1,0 +1,419 @@
+
+   ######### Name space ##########
+
+
+   ######### DOCTRINE 2 ###########
+
+
+	  => Pourquoi créer une entité manager /
+
+
+
+	******** doctrine 2 generate entities from its database *********
+
+
+  	******** Assurer la persistence ***********
+
+       
+        ******** Reverse Engineering *************
+
+
+
+	******** Modèle/Vue *********
+
+	
+	=> création d'un logiciel de gestion de factures et client sous symfony
+
+
+        ******** Autocompletion ********
+
+
+       => Autocomplétion des annotations Doctrine 2
+
+
+       
+
+   ########## SYMFONY ################
+
+
+
+        ******** Générer des Bundles **********
+
+          => Bundle ou services
+
+         
+ 	  => Pour gérer les utilisateurs FosUserBundle
+
+
+          => Mettre les bundle dans AppKernel
+
+
+
+
+	******** Component ************
+
+
+
+	******** Bridge *************
+
+	=> Ruby Symfony Bridge
+
+	=> A quoi serve les bridge ? 
+
+	
+	******* Variables **********
+
+        => 
+
+	
+	******* Plugin/cONFIG **********
+
+
+        => PHP iterpreter / Faire run puis changer version PHP passer à PHP7.1
+
+	=> https://confluence.jetbrains.com/display/PhpStorm/Working+with+Doctrine+-+Symfony+Development+using+PhpStorm
+
+	=> Chercher plugin PHP annotation
+
+        => Tout les pluggin symfony / http://www.symfony-project.org/plugins/
+
+	=> https://www.wanadev.fr/35-guide-du-developpeur-symfony-3-pragmatique/
+
+	=> Symfony 3 Bundle
+
+        
+        ******** Créer une entity Manager **********
+
+	
+    	=> créer une classe entity manager
+
+
+	*************** Factures *************
+
+	
+    	=>  Créer une classe abstraite facture (Taper symfony 3 facture régléé ou non réglée)
+        =>  Soit elle est réglée ou non réglée  
+
+        => Creer un construtor facture (Sur symfony un "Service container")
+
+	
+	************* Default controler *********
+
+	=> créer un index de page
+
+	=> Afficher le factures non réglées
+
+
+	************* SensioExtraBundle **************
+
+       	https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
+
+
+
+	************* Form **************************
+
+
+	https://symfony.com/doc/3.4/form/form_customization.html
+
+        
+
+   ######## ANNOTATION #########
+
+
+
+     ********* @inheritdoc ***************
+
+
+
+     ********* @Template ******************
+
+
+   ######## LOG ########
+
+
+     var /logs /dev.log
+
+
+
+
+
+
+   ######### CACHE /  #############
+
+
+   => Invalider le cache /ds file
+
+   https://www.jetbrains.com/help/phpstorm/cleaning-system-cache.html
+
+   Remarque :  Nettoyer les caches du système, gardez cela à l'esprit :
+
+Cela permet d'effacer l'historique local.
+Pour éviter de perdre des données, vérifiez les modifications apportées à votre système de contrôle de version avant d'invalider les caches.
+Provoque une reconstruction complète de tous les projets jamais exécutés dans la version actuelle de PhpStorm.
+
+
+  => https://www.jetbrains.com/help/phpstorm/cleaning-system-cache.html
+
+
+
+   ######### COMPOSER ##########
+
+
+   => Utiliser packagist
+
+   => Le formtype était peut-être généré avec 
+
+   => composer vardump_autoload / Pour mettre à jour les classes
+
+
+
+   ######## FUNCTION ########
+
+
+
+	=> buildForm
+        => ConfigureOptions
+
+
+   ####### BDD ########
+
+
+	=> vérifier si l'on passe par le controller pour persister les objets 
+
+
+	=> "How to Use Doctrine DBAL" / 
+
+
+	=> $QueryBuilder (variable à déclarer voir dans quel fichier)
+
+
+	=> Chargé les données de Test
+
+
+	=> http://www.keiruaprod.fr/symblog-fr/docs/maj-des-articles-ajout-de-commentaires.html (voir super important)
+
+	   Afin d’afficher les articles, nous devons les récupérer depuis la base de donnée. Doctrine 2 utilise le langage langage de requêtes Doctrine (pour Doctrine Query Language, ou DQL) ainsi qu’un système de construction de requêtes (QueryBuilder) pour celà. Vous pouvez bien évidemment utiliser du SQL pûr avec Doctrine 2, mais c’est fortement découragé, car celà retire l’abstraction que Doctrine nous fournit. Nous allons utiliser le QueryBuilder, car il nous fournit une manière objet sympathique pour effectuer nos requêtes sur la base de donnée. Nous allons mettre à jour l’action index du contrôleur 
+           Page dans src/Blogger/BlogBundle/Controller/PageController.php pour récupérer les articles de la base de donnée.
+
+	// src/Blogger/BlogBundle/Controller/PageController.php
+class PageController extends Controller
+{
+    public function indexAction()
+    {
+        $em = $this->getDoctrine()
+                   ->getEntityManager();
+
+        $blogs = $em->createQueryBuilder()
+                    ->select('b')
+                    ->from('BloggerBlogBundle:Blog',  'b')
+                    ->addOrderBy('b.created', 'DESC')
+                    ->getQuery()
+                    ->getResult();
+
+        return $this->render('BloggerBlogBundle:Page:index.html.twig', array(
+            'blogs' => $blogs
+        ));
+    }
+
+    // ..
+}
+
+
+   	****** L'index *******
+
+
+
+	=> les tables de jointures lors de ManyToMany)
+
+	=> If you want to have a one-to-many relationship, you will need to add it manually into the entity or to the generated XML or YAML files. 
+           Add a section on the specific entities for one-to-many defining the inversedBy and the mappedBy pieces.
+
+
+       ******* Commande Symfony *********
+
+      
+       => php bin/console doctrine:database:create
+
+       => Pour importer la base de données doit-on créer les entités avant 
+
+
+
+	******* Migration Class *********
+
+	=> Actually, this command is incredibly powerful. It compares what your database should look like (based on the mapping information of your entities) with how it actually looks, and executes the SQL statements 
+
+needed to update the database schema to where it should be. In other words, if you add a new property with mapping metadata to Product and run this command, it will execute the "ALTER TABLE" statement needed to add that new column to the existing product table.
+
+An even better way to take advantage of this functionality is via migrations, which allow you to generate these SQL statements and store them in migration classes that can be run systematically on your production server in order to update and track changes to your database schema safely and reliably.
+
+Whether or not you take advantage of migrations, the doctrine:schema:update command should only be used during development. It should not be used in a production environment.
+
+
+
+
+	******** issues *********
+
+
+	Pour résoudre ce type d'erreur :  
+
+SQLSTATE[HY000] [2006] MySQL server has gone away ou 
+Creating database schema...
+[PDOException]
+SQLSTATE[HY000] [2006] MySQL server has gone away
+[ErrorException]
+Warning: PDO::__construct(): MySQL server has gone away in E:\wamp\www\0-aides\mooveradio\Symfony\vendor\doctrine-dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php line 36
+doctrine:schema:create [--dump-sql] [--em[="..."]]
+Réponse :
+1- Il faut aller dans le dossier suivant : symfony/app/config/
+2- Ouvrir le fichier : parameters.yml
+3- mettre le numéro du port de la base de données : database_port:3306
+4- Vous sauvegardez le fichier!
+5- Vous actualisez la page web et vous allez bien sourire ^_^
+-> Si vous avez un doute sur le numéro de port de la base de données, vous pouvez aller : wamp/bin/php/php_avec_version/ et vous cherchez le fichier php.ini et vous le parcourez jusqu'à trouver la ligne suivante : mysql.default_port et vous verrez le numéro de port à utiliser ^_^
+Bon courage pour la suite (y)
+
+
+
+   ######## Presentation Memoire #########
+
+
+       => https://symfony.com/doc/3.4/doctrine.html (page à connaître par coeur),
+
+       => Querying for Objects.
+
+       => Les injections SQL
+
+
+
+      => Paragraphe sur le choix d'environnement (Envi Dev et Env Prod)
+
+
+
+
+	*********** Screen Capture **********
+
+
+	=> Capture d'écran de config symfony 
+
+
+
+	*********** BDD *************
+
+
+       => Pour les requêtes je pourrai aussi bien les présenter et les executer en ligne de commande qu'avec l'entity manager
+
+       => Les classes permetteant d'interroger la base de données au travers d'objets....
+
+
+
+
+        ********** Mapping ***********
+
+    
+       => Les informations en base de données doivent être mappées
+ 
+
+       
+       ************ L'encaodage BDD *********
+
+       
+       => Sinon, tout simplement, si ta base de donnée est encodé en latin1, afficher ensuite ses données en utf8 te causera des soucis, 
+          tu auras des accents bizarres et tu devras bidouiller pour obtenir un résultat. Alors qu'en mettant ta base de donnée en UTF-8 comme ton site, avec l'interclassement des colonnes ET de la base de donnée. Déjà là tu n'auras plus à bidouiller.
+
+
+
+   ######## Git ###########
+
+  
+      => Bonne page à consulter : git-scm.com/book/fr/v2/Utilitaires-Git-Remisage-et-nettoyage
+
+
+
+   ######## Constructor ########
+
+       => php.net/manual/fr/language.oop5.decon.php
+
+
+
+
+   ######## Ruby #########
+
+
+  	=> Les constructors dans ruby
+
+   #######  MDP ###########
+
+
+Une note sur parameters.php
+Il est possible d’utiliser le fichier parameters.yml, par contre, il est impossible d’exécuter des commandes PHP dans un fichier YAML.
+
+Dans le très bon article 12 factor app, il est recommandé de ne pas inscrire de mot de passe dans vos fichiers de projet. Cela amène 2 avantages importants :
+
+Conserve votre mot de passe privé.
+Permet de déployer votre application vers plusieurs environnements sans avoir à modifier le code.
+Le truc : les variables d’environnement
+Il faut éviter de déposer vos mots de passe dans votre code. Où les mettre alors? La réponse est de déposer vos mots de passe et vos configurations dans des variables d’environnement et de les récupérer avec la commande PHP getenv().
+	
+
+
+    ####### Modélisation #######
+
+    
+       => Conception orientés objet
+
+       => https://openclassrooms.com/courses/programmez-en-oriente-objet-en-php/uml-modelisons-nos-classes-2-2
+
+       => https://www.google.fr/search?q=connaissance+des+m%C3%A9thodes+UML+appr%C3%A9ci%C3%A9e&rlz=1C1AVFA_enFR783FR783&oq=connaissance+des+m%C3%A9thodes+UML+appr%C3%A9ci%C3%A9e&aqs=chrome..69i57.13154j1j7&sourceid=chrome&ie=UTF-8
+
+
+
+    ######### Requêtes ###########
+
+   
+   => doctrine importer les classes d'une base de données
+
+   => doctrine commande git après avoir importé la base de donnée
+
+   => GIT annuler le drop d'un base de données
+
+   => doctrine:database:import + name of file
+
+
+  => Symfony/3.4/construct
+
+  => Très très bon lien https://symfony.com/doc/3.4/doctrine.html
+
+  => création d'un logiciel de gestion de factures et client sous symfony
+
+
+     ************ Reverse Engeneering *************
+
+   https://openclassrooms.com/forum/sujet/doctrine-reverse-engineering
+
+  https://symfony.com/doc/3.4/doctrine/reverse_engineering.html
+
+
+     ***********  Confluence *********************
+
+   https://confluence.jetbrains.com/display/PhpStorm/Working+with+Doctrine+-+Symfony+Development+using+PhpStorm
+
+
+    ***********  Autocompletion ******************
+
+
+   avoir l'autocomplétion pour doctrine 2
+
+
+    ***********  TUTO   ***********************
+
+   
+    
+
+
+
+
+
+
+
+
+

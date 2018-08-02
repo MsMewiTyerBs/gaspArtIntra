@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+
+        <table>
+            <tr>{% for ltr in 'A'..'Z' %}
+
+                <td><br><a href="{{ url('listActionByLetter', {'letter': ltr}) }}">{{ltr}}</a><br><br></td>
+
+                {%endfor%}
+            </tr>
+        </table>
+
+        {% if letter is defined %}
+            <h1>Affichage des clients commençant par la lettre {{ letter|upper }}</h1>
+        {% else %}
+            <h1>Affichage de tous les clients</h1>
+        {% endif %}
+
+
+        {% for client in clients %}
+            <a href="{{ url('showClient', {'id': client.id}) }}"><li>{{client.nom}} {{client.prenom}} {{client.id}}</li></a>
+
+
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

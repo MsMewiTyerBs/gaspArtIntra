@@ -1,0 +1,28 @@
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ composer require annotations
+
+
+  [InvalidArgumentException]
+  Could not find package annotations.
+
+  Did you mean one of these?
+      doctrine/annotations
+      jms/metadata
+      nette/reflection
+      doctrine/common
+      jms/aop-bundle
+
+
+require [--dev] [--prefer-source] [--prefer-dist] [--no-progress] [--no-suggest] [--no-update] [--no-scripts] [--update-no-dev] [--update-with-dependencies] [--update-with-all-dependencies] [--ignore-platform-reqs] [--prefer-stable] [--prefer-lowest] [--sort-packages] [-o|--optimize-autoloader] [-a|--classmap-authoritative] [--apcu-autoloader] [--] [<packages>]...
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ composer require doctrine/annotations
+Using version ^1.4 for doctrine/annotations
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$

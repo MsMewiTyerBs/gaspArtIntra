@@ -1,0 +1,43 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Photos
+ *
+ * @ORM\Table(name="photos", indexes={@ORM\Index(name="client_id", columns={"client_id"})})
+ * @ORM\Entity
+ */
+class Photos
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="chemin", type="string", length=200, nullable=false)
+     */
+    private $chemin;
+
+    /**
+     * @var \Clients
+     *
+     * @ORM\ManyToOne(targetEntity="Clients")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     * })
+     */
+    private $client;
+
+
+}
+

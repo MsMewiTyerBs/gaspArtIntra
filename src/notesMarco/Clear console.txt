@@ -1,0 +1,100 @@
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console router:debug
+
+
+  Command "router:debug" is not defined.
+
+  Did you mean one of these?
+      router:match
+      swiftmailer:debug
+
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console router:match
+
+
+  Not enough arguments (missing: "path_info").
+
+
+router:match [--method METHOD] [--scheme SCHEME] [--host HOST] [-h|--help] [-q|-
+-quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-inter
+action] [-e|--env ENV] [--no-debug] [--] <command> <path_info>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console debug:router
+ -------------------------- -------- -------- ------ ---------------------------
+--------
+  Name                       Method   Scheme   Host   Path
+
+ -------------------------- -------- -------- ------ ---------------------------
+--------
+  _wdt                       ANY      ANY      ANY    /_wdt/{token}
+
+  _profiler_home             ANY      ANY      ANY    /_profiler/
+
+  _profiler_search           ANY      ANY      ANY    /_profiler/search
+
+  _profiler_search_bar       ANY      ANY      ANY    /_profiler/search_bar
+
+  _profiler_phpinfo          ANY      ANY      ANY    /_profiler/phpinfo
+
+  _profiler_search_results   ANY      ANY      ANY    /_profiler/{token}/search/
+results
+  _profiler_open_file        ANY      ANY      ANY    /_profiler/open
+
+  _profiler                  ANY      ANY      ANY    /_profiler/{token}
+
+  _profiler_router           ANY      ANY      ANY    /_profiler/{token}/router
+
+  _profiler_exception        ANY      ANY      ANY    /_profiler/{token}/excepti
+on
+  _profiler_exception_css    ANY      ANY      ANY    /_profiler/{token}/excepti
+on.css
+  _twig_error_test           ANY      ANY      ANY    /_error/{code}.{_format}
+
+ -------------------------- -------- -------- ------ ---------------------------
+--------
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console cache:clear --env=prod
+
+ // Clearing the cache for the prod environment with debug false
+
+
+In YamlFileLoader.php line 203:
+
+  The definition of "_welcome" in "J:\Renovie/app/config/routing.yml" must be a YAML array.
+
+
+cache:clear [--no-warmup] [--no-optional-warmers] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--a
+nsi] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ composer update
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 0 installs, 4 updates, 0 removals
+  - Updating paragonie/random_compat (v2.0.12 => v2.0.15): Downloading (100%)
+  - Updating sensio/distribution-bundle (v5.0.21 => v5.0.22): Downloading (100%)
+  - Updating symfony/monolog-bundle (v3.2.0 => v3.3.0): Downloading (100%)
+  - Updating symfony/phpunit-bridge (v3.4.10 => v3.4.11): Loading from cache
+Writing lock file
+Generating autoload files
+> Incenteev\ParameterHandler\ScriptHandler::buildParameters
+Updating the "app/config/parameters.yml" file
+> Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::buildBootstrap
+> Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::clearCache
+
+ // Clearing the cache for the dev environment with debug
+ // true
+
+
+ [OK] Cache for the "dev" environment (debug=true) was successfully cleared.
+
+
+> Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::installAssets

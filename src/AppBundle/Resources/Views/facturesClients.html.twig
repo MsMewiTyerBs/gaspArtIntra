@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h2>FACTURE DE {{ name }} </h2>
+
+    {% for facture in factures  %}
+
+        <li>{{facture.date}}{{facture.titre}}{{facture.id }}{{facture.etat}}</li>
+    </div>
+{% endblock %}

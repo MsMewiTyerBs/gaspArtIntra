@@ -1,0 +1,95 @@
+Fournisseurs:
+    type: entity
+    table: fournisseurs
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        societe:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+        telSoc:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: false
+            column: tel_soc
+        faxSoc:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: false
+            column: fax_soc
+        rue:
+            type: string
+            nullable: true
+            length: 120
+            options:
+                fixed: false
+        cp:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: false
+        ville:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+        civilite:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+                default: '2'
+        nom:
+            type: string
+            nullable: true
+            length: 60
+            options:
+                fixed: false
+        prenom:
+            type: string
+            nullable: true
+            length: 60
+            options:
+                fixed: false
+        tel:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: false
+        fax:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: false
+        mob:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <li>{{client.nom}} {{client.prenom}} {{client.id}}</li>
+
+
+            <h2>FACTURE DE {{client.nom}} {{client.prenom}}</h2>
+
+            {% for facture in factures  %}
+                <li>{{facture.titre}} {{facture.id }} {{facture.etat}}</li>
+            {% endfor %}
+
+          {#<--! mettre une table tr + td -->#}
+
+            </div>
+{% endblock %}

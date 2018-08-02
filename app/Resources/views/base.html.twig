@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="theme-color" content="#3063A0">
+        <script src="/gaspArtIntra/web/bundles/app/js/pace.min.js"></script>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('bundles/app/css/pace.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/app/css/open-iconic-bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/app/css/fontawesome-all.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/app/css/main.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/app/css/custom.css') }}">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+            <!-- .app -->
+    <div class="app">
+      <!-- .app-header -->
+      <header class="app-header">
+        <!-- .top-bar -->
+        <div class="top-bar">
+          <!-- .top-bar-brand -->
+          <div class="top-bar-brand">
+            <a href="index.html">
+              <!-- /logo Renovie -->
+              <img src="{{ asset('bundles/app/images/brand-inverse.png') }}" height="32" alt="">
+            </a>
+          </div>
+          <!-- /.top-bar-brand -->
+          <!-- .top-bar-list -->
+          <div class="top-bar-list">
+            <!-- .top-bar-item -->
+            <div class="top-bar-item px-2 d-md-none d-lg-none d-xl-none">
+              <!-- toggle menu -->
+              <button class="hamburger hamburger-squeeze" type="button" data-toggle="aside" aria-label="Menu" aria-controls="navigation">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+              <!-- /toggle menu -->
+            </div>
+            <!-- /.top-bar-item -->
+            <!-- .top-bar-item -->
+            <div class="top-bar-item top-bar-item-full">
+              <!-- .top-bar-search -->
+              <div class="top-bar-search">
+                <div class="input-group input-group-search">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <span class="oi oi-magnifying-glass"></span>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Recherche"> </div>
+              </div>
+              <!-- /.top-bar-search -->
+            </div>
+            <!-- /.top-bar-item -->
+          </div>
+          <!-- /.top-bar-list -->
+        </div>
+        <!-- /.top-bar -->
+      </header>
+      <!-- /.app-header -->
+      <!-- .app-aside -->
+      <aside class="app-aside">
+        <!-- .aside-content -->
+        <div class="aside-content">
+          <!-- .aside-menu -->
+          <section class="aside-menu has-scrollable">
+            <!-- .stacked-menu -->
+            <nav id="stacked-menu" class="stacked-menu">
+              <!-- .menu -->
+              <ul class="menu">
+                <!-- .menu-item -->
+                <li class="menu-item">
+                  <a href="index.html" class="menu-link">
+                    <span class="menu-icon oi oi-home"></span>
+                    <span class="menu-text">Accueil</span>
+                  </a>
+                </li>
+                <!-- /.menu-header -->
+                <!-- .menu-item -->
+                <li class="menu-item">
+                  <a href="{{ url('listAllClients') }}" class="menu-link">
+                    <span class="menu-icon oi oi-person"></span>
+                    <span class="menu-text">Clients</span>
+                  </a>
+                </li>
+                <!-- /.menu-item -->
+                <!-- .menu-item -->
+                <li class="menu-item">
+                  <a href="#" class="menu-link">
+                    <span class="menu-icon oi oi-cart"></span>
+                    <span class="menu-text">Fournisseurs</span>
+                  </a>
+                </li>
+                <!-- /.menu-item -->
+                <!-- .menu-item -->
+                <li class="menu-item">
+                  <a href="#" class="menu-link">
+                    <span class="menu-icon oi oi-people"></span>
+                    <span class="menu-text">Sous-Traitants</span>
+                  </a>
+                </li>
+                </li>
+                <!-- /.menu-item -->
+                <!-- .menu-item -->
+                <li class="menu-item">
+                  <a href="index.html" class="menu-link">
+                    <span class="menu-icon oi oi-random"></span>
+                    <span class="menu-text">Contacts</span>
+                  </a>
+                </li>
+                <!-- /.menu-header -->
+                <!-- .menu-item -->
+                <li class="menu-item">
+                  <a href="index.html" class="menu-link">
+                    <span class="menu-icon oi oi-magnifying-glass"></span>
+                    <span class="menu-text">Recherche</span>
+                  </a>
+                </li>
+                </li>
+                <!-- /.menu-item -->
+              </ul>
+              <!-- /.menu -->
+            </nav>
+            <!-- /.stacked-menu -->
+          </section>
+          <!-- /.aside-menu -->
+        </div>
+        <!-- /.aside-content -->
+      </aside>
+      <!-- /.app-aside -->
+      <!-- .app-main -->
+      <main class="app-main">
+        <!-- .wrapper -->
+        <div class="wrapper">
+          <!-- .page -->
+          <div class="page">
+                {% block body %}{% endblock %}
+          </div>
+          <!-- /.page -->
+        </div>
+        <!-- /.wrapper -->
+      </main>
+      <!-- /.app-main -->
+    </div>
+    <!-- /.app -->
+        
+        {% block javascripts %}
+            <script src="{{ asset('bundles/app/js/jquery.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/popper.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/stacked-menu.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/perfect-scrollbar.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/main.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,356 @@
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine
+
+
+  Command "doctrine" is not defined.
+
+  Did you mean one of these?
+      doctrine:cache:clear
+      doctrine:cache:clear-collection-region
+      doctrine:cache:clear-entity-region
+      doctrine:cache:clear-metadata
+      doctrine:cache:clear-query
+      doctrine:cache:clear-query-region
+      doctrine:cache:clear-result
+      doctrine:cache:contains
+      doctrine:cache:delete
+      doctrine:cache:flush
+      doctrine:cache:stats
+      doctrine:database:create
+      doctrine:database:drop
+      doctrine:database:import
+      doctrine:ensure-production-settings
+      doctrine:generate:crud
+      doctrine:generate:entities
+      doctrine:generate:entity
+      doctrine:generate:form
+      doctrine:mapping:convert
+      doctrine:mapping:import
+      doctrine:mapping:info
+      doctrine:query:dql
+      doctrine:query:sql
+      doctrine:schema:create
+      doctrine:schema:drop
+      doctrine:schema:update
+      doctrine:schema:validate
+      generate:doctrine:crud
+      generate:doctrine:entity
+      generate:doctrine:form
+
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:databse:import
+
+
+  There are no commands defined in the "doctrine:databse" namespace.
+
+  Did you mean one of these?
+      doctrine
+      doctrine:cache
+      doctrine:database
+      doctrine:generate
+      doctrine:mapping
+      doctrine:query
+      doctrine:schema
+
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:database:import
+
+
+  Not enough arguments (missing: "file").
+
+
+doctrine:database:import [--connection [CONNECTION]] [-h|--help] [-q|--quiet] [-
+v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-
+e|--env ENV] [--no-debug] [--] <command> <file> (<file>)...
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:database:import renovie_production.sql
+Processing file 'J:\Renovie\renovie_production.sql'...
+In AbstractMySQLDriver.php line 115:
+
+  An exception occured in driver: SQLSTATE[HY000] [2006] MySQL server has gon
+  e away
+
+
+In PDOConnection.php line 47:
+
+  SQLSTATE[HY000] [2006] MySQL server has gone away
+
+
+In PDOConnection.php line 43:
+
+  SQLSTATE[HY000] [2006] MySQL server has gone away
+
+
+In PDOConnection.php line 43:
+
+  PDO::__construct(): MySQL server has gone away
+
+
+doctrine:database:import [--connection [CONNECTION]] [-h|--help] [-q|--quiet] [-
+v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-
+e|--env ENV] [--no-debug] [--] <command> <file> (<file>)...
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:database:import renovie_production.sql
+Processing file 'J:\Renovie\renovie_production.sql'...
+In AbstractMySQLDriver.php line 115:
+
+  An exception occured in driver: SQLSTATE[HY000] [2006] MySQL server has gon
+  e away
+
+
+In PDOConnection.php line 47:
+
+  SQLSTATE[HY000] [2006] MySQL server has gone away
+
+
+In PDOConnection.php line 43:
+
+  SQLSTATE[HY000] [2006] MySQL server has gone away
+
+
+In PDOConnection.php line 43:
+
+  PDO::__construct(): MySQL server has gone away
+
+
+doctrine:database:import [--connection [CONNECTION]] [-h|--help] [-q|--quiet] [-
+v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-
+e|--env ENV] [--no-debug] [--] <command> <file> (<file>)...
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ ^C
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:database:drop --force
+
+In AbstractMySQLDriver.php line 115:
+
+  An exception occured in driver: SQLSTATE[HY000] [2006] MySQL server has gon
+  e away
+
+
+In PDOConnection.php line 47:
+
+  SQLSTATE[HY000] [2006] MySQL server has gone away
+
+
+In PDOConnection.php line 43:
+
+  SQLSTATE[HY000] [2006] MySQL server has gone away
+
+
+In PDOConnection.php line 43:
+
+  PDO::__construct(): MySQL server has gone away
+
+
+doctrine:database:drop [--connection [CONNECTION]] [--shard SHARD] [--if-exists]
+ [--force] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi
+] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:database:import annotation
+
+In ImportCommand.php line 76:
+
+  SQL file '<info>annotation</info>' does not exist.
+
+
+doctrine:database:import [--connection [CONNECTION]] [-h|--help] [-q|--quiet] [-
+v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-
+e|--env ENV] [--no-debug] [--] <command> <file> (<file>)...
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ ^C
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ ^C
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ ^C
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php app/dev_console doctrine:database:import import.sql
+Could not open input file: app/dev_console
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php artisan doctrine:mapping:import annotation
+Could not open input file: artisan
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php app/console doctrine:mapping:convert --from-database yml
+Could not open input file: app/console
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:convert --from-database
+
+
+  Not enough arguments (missing: "to-type, dest-path").
+
+
+doctrine:mapping:convert [--filter FILTER] [-f|--force] [--from-database] [--extend [EXTEND]] [--num-s
+paces [NUM-SPACES]] [--namespace [NAMESPACE]] [--em [EM]] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbos
+e] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command
+> <to-type> <dest-path>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:convert --from-database yml
+
+
+  Not enough arguments (missing: "dest-path").
+
+
+doctrine:mapping:convert [--filter FILTER] [-f|--force] [--from-database] [--extend [EXTEND]] [--num-s
+paces [NUM-SPACES]] [--namespace [NAMESPACE]] [--em [EM]] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbos
+e] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command
+> <to-type> <dest-path>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:convert --from-renovie_production yml
+
+
+  The "--from-renovie_production" option does not exist.
+
+
+doctrine:mapping:convert [--filter FILTER] [-f|--force] [--from-database] [--extend [EXTEND]] [--num-s
+paces [NUM-SPACES]] [--namespace [NAMESPACE]] [--em [EM]] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbos
+e] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command
+> <to-type> <dest-path>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:convert --from-renovie_production.sql yml
+
+
+  The "--from-renovie_production.sql" option does not exist.
+
+
+doctrine:mapping:convert [--filter FILTER] [-f|--force] [--from-database] [--extend [EXTEND]] [--num-s
+paces [NUM-SPACES]] [--namespace [NAMESPACE]] [--em [EM]] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbos
+e] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command
+> <to-type> <dest-path>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:convert --renovie_production.sql yml
+
+
+  The "--renovie_production.sql" option does not exist.
+
+
+doctrine:mapping:convert [--filter FILTER] [-f|--force] [--from-database] [--extend [EXTEND]] [--num-s
+paces [NUM-SPACES]] [--namespace [NAMESPACE]] [--em [EM]] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbos
+e] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command
+> <to-type> <dest-path>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:convert renovie_production.sql yml
+
+In ExportException.php line 16:
+
+  The specified export driver 'renovie_production.sql' does not exist
+
+
+doctrine:mapping:convert [--filter FILTER] [-f|--force] [--from-database] [--extend [EXTEND]] [--num-s
+paces [NUM-SPACES]] [--namespace [NAMESPACE]] [--em [EM]] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbos
+e] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command
+> <to-type> <dest-path>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:mapping:convert --from renovie_production.sql yml
+
+
+  The "--from" option does not exist.
+
+
+doctrine:mapping:convert [--filter FILTER] [-f|--force] [--from-database] [--extend [EXTEND]] [--num-s
+paces [NUM-SPACES]] [--namespace [NAMESPACE]] [--em [EM]] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbos
+e] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command
+> <to-type> <dest-path>
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php app/console doctrine:mapping:convert --from-renovie_production.sql yml
+Could not open input file: app/console
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:database:import
+
+
+  Not enough arguments (missing: "file").
+
+
+doctrine:database:import [--connection [CONNECTION]] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-
+V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command> <fi
+le> (<file>)...
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:database:import renovie_production.sql
+Processing file 'J:\Renovie\renovie_production.sql'... OK!
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:database:drop --force
+Dropped database for connection named `renovie_production`
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:database:import renovie_production.sql
+Processing file 'J:\Renovie\renovie_production.sql'... OK!
+
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ bin/console doctrine:database:create
+Could not create database `renovie_production` for connection named default
+An exception occurred while executing 'CREATE DATABASE `renovie_production`':
+
+SQLSTATE[HY000]: General error: 1007 Ne peut créer la base 'renovie_production'; elle existe déjà
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ bin/console doctrine:schema:update --force
+No Metadata Classes to process.
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ bin/console doctrine:schema:update --dump-sql
+No Metadata Classes to process.
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:schema:update --force
+No Metadata Classes to process.
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:schema:update --dump-sql
+No Metadata Classes to process.
+
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$ php bin/console doctrine:generate:entity
+
+
+  Welcome to the Doctrine2 entity generator
+
+
+
+This command helps you generate Doctrine2 entities.
+
+First, you need to give the entity name you want to generate.
+You must use the shortcut notation like AcmeBlogBundle:Post.
+
+The Entity shortcut name:
+MARC@FULL-PC MINGW64 /j/Renovie (master)
+$

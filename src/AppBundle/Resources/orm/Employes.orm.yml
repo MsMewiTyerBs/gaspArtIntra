@@ -1,0 +1,131 @@
+Employes:
+    type: entity
+    table: employes
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        civilite:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+                default: '2'
+        nom:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+        prenom:
+            type: string
+            nullable: true
+            length: 60
+            options:
+                fixed: false
+        tel:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: true
+        mob:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: false
+        rue:
+            type: string
+            nullable: true
+            length: 120
+            options:
+                fixed: false
+        cp:
+            type: string
+            nullable: true
+            length: 5
+            options:
+                fixed: false
+        ville:
+            type: string
+            nullable: true
+            length: 60
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        secu:
+            type: string
+            nullable: true
+            length: 15
+            options:
+                fixed: true
+        situation:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+                default: C
+        poste:
+            type: string
+            nullable: false
+            length: 60
+            options:
+                fixed: false
+        categorie:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+        arrive:
+            type: date
+            nullable: true
+        depart:
+            type: date
+            nullable: true
+        contrat:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+        qualif:
+            type: string
+            nullable: true
+            length: 5
+            options:
+                fixed: false
+        salaire:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+        lastsalaire:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 0
+        augmentation:
+            type: date
+            nullable: true
+        telboulot:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: true
+    lifecycleCallbacks: {  }

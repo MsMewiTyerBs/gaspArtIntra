@@ -1,0 +1,173 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Employes
+ *
+ * @ORM\Table(name="employes")
+ * @ORM\Entity
+ */
+class Employes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="civilite", type="string", length=1, nullable=false)
+     */
+    private $civilite = '2';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=60, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=60, nullable=true)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tel", type="string", length=10, nullable=true)
+     */
+    private $tel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mob", type="string", length=15, nullable=true)
+     */
+    private $mob;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rue", type="string", length=120, nullable=true)
+     */
+    private $rue;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cp", type="string", length=5, nullable=true)
+     */
+    private $cp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="string", length=60, nullable=true)
+     */
+    private $ville;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="secu", type="string", length=15, nullable=true)
+     */
+    private $secu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="situation", type="string", length=1, nullable=false)
+     */
+    private $situation = 'C';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="poste", type="string", length=60, nullable=false)
+     */
+    private $poste;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="categorie", type="string", length=1, nullable=false)
+     */
+    private $categorie;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="arrive", type="date", nullable=true)
+     */
+    private $arrive;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="depart", type="date", nullable=true)
+     */
+    private $depart;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contrat", type="string", length=1, nullable=false)
+     */
+    private $contrat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="qualif", type="string", length=5, nullable=true)
+     */
+    private $qualif;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="salaire", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $salaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lastsalaire", type="decimal", precision=10, scale=0, nullable=true)
+     */
+    private $lastsalaire;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="augmentation", type="date", nullable=true)
+     */
+    private $augmentation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telboulot", type="string", length=10, nullable=true)
+     */
+    private $telboulot;
+
+
+}
+

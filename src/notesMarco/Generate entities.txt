@@ -1,0 +1,22 @@
+$ php bin/console server:run
+
+In FileLoader.php line 168:
+
+  The autoloader expected class "App\AppBundle" to be defined in file "C:\Use
+  rs\MARC\Symfony\Renovie\Renovie\vendor\composer/../../src\AppBundle.php". T
+  he file was found but the class was not in it, the class name or namespace
+  probably has a typo in C:\Users\MARC\Symfony\Renovie\Renovie\config/service
+  s.yaml (which is loaded in resource "C:\Users\MARC\Symfony\Renovie\Renovie\
+  config/services.yaml").
+
+
+In DebugClassLoader.php line 293:
+
+  The autoloader expected class "App\AppBundle" to be defined in file "C:\Use
+  rs\MARC\Symfony\Renovie\Renovie\vendor\composer/../../src\AppBundle.php". T
+  he file was found but the class was not in it, the class name or namespace
+  probably has a typo.
+
+
+
+MARC@FULL-PC MINGW64 ~/Symfony/Renovie/Renovie (master)

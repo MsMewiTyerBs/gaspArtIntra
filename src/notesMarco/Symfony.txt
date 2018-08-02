@@ -1,0 +1,68 @@
+// Lance le serveur intégré à PHP usr le port 8000
+php bin/console server:run 
+-> localhost:8000
+
+// pour voir les lignes de commande possibles de doctrine
+php bin/console doctrine
+
+// créer BDD
+php bin/console doctrine:database:create
+
+// synchronise la BDD en ligne de commande sans passer par les tables en BDD
+php bin/console doctrine:schema:validate
+
+// dump le sql avant pour voir
+php bin/console doctrine:schema:update --dump-sql
+php bin/console doctrine:schema:update --force --dump-sql
+
+// genere les entites
+php bin/console doctrine:generate:entities AppBundle:News
+
+
+
+// Pour avoir la barre en bas avec les infos, il faut retourner un element du DOM comme le <body></body>
+return new Response("<body></body>");
+
+
+
+
+Doctrine :
+-Entity : correspond au DAO
+-Repository : Correspond à l'objet sur lequel on peut faire des requetes en BDD
+-ObjectManager : Correspond aux managers des DAO
+
+BUNDLES : Toujours ajouter le Bundle dans app\Resources\AppKernel
+
+param converteur pour les id multiples dans les parametres des anotations
+
+// GENERER UN FORMULAIRE A PARTIR D'UNE ENTITE
+// Pour cibler l'entité avec la quelle on veut générer le formulaire
+
+// Voir les services
+php bin/console debug:container
+php bin/console doctrine:generate:form AppBundle:Category
+
+
+// TESTS
+composer require --dev phpunit/phpunit
+
+// Lancer des tests avec un groupe
+vendor/bin/phpunit --group Twig
+
+// BUNDLE INSTALL FOS USER
+Ne pas oublier de creer les entites doctrine à l'etape 7
+
+// creer un User
+php bin/console fos:user:create
+
+// promote
+php bin/console fos:user:promote name --super
+
+// redirections : dans app/config/security.yml
+firewalls:
+	default_target_path: /admin
+logout:
+                target: /login
+
+// surcharge vue FOSUser : app/Resources/FOSUserBundle/views/Security/login.html.twig
+

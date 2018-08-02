@@ -1,0 +1,48 @@
+Lettrees:
+    type: entity
+    table: lettrees
+    indexes:
+        employe_id:
+            columns:
+                - employe_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        chemin:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+        objet:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        dateEnvoi:
+            type: date
+            nullable: false
+            column: date_envoi
+        recommande:
+            type: boolean
+            nullable: true
+    manyToOne:
+        employe:
+            targetEntity: Employes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                employe_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

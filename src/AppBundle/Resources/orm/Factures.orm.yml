@@ -1,0 +1,99 @@
+Factures:
+    type: entity
+    table: factures
+    indexes:
+        client_id:
+            columns:
+                - client_id
+        titre:
+            columns:
+                - titre
+        etat:
+            columns:
+                - etat
+        numero:
+            columns:
+                - numero
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        chemin:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+        titre:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+        dateEnvoi:
+            type: date
+            nullable: false
+            column: date_envoi
+        etat:
+            type: string
+            nullable: false
+            length: 2
+            options:
+                fixed: false
+        numero:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        ttc:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        tva:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+        datePaye:
+            type: date
+            nullable: true
+            column: date_paye
+        adrChantier:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+            column: adr_chantier
+        relance:
+            type: boolean
+            nullable: false
+            options:
+                default: '0'
+        deviId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+            column: devi_id
+    manyToOne:
+        client:
+            targetEntity: Clients
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                client_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
